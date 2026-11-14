@@ -1,0 +1,4 @@
+github.com/sagernet/sing v0.9.7-0.20261110095940-27b73774b240 h1:VtsWVLrPqf1brgvW4pwNxmROSitei/2OrFNsOHQ3/o8=
+github.com/sagernet/sing v0.9.7-0.20261110095940-27b73774b240/go.mod h1:K3Owt3xPhHugvlnlPPxZJ/exXdaJfEPOTNorGk4AXjo=
+golang.org/x/sys v0.47.0 h1:o7XGOvZQCADBQQ4Y7VNq2dRWQR7JmOUW8Kxx4ZsNgWs=
+golang.org/x/sys v0.47.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=
