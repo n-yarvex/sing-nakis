@@ -4,10 +4,7 @@ Nakis for [sing](https://github.com/SagerNet/sing): a client and a service that 
 [nakis](https://github.com/n-yarvex/nakis) wire protocol and plug into sing-box as an
 outbound and an inbound.
 
-The wire logic is the same as the standalone nakis: 2-byte frames with in-band padding,
-a per-direction NAP so a tunnel can be reused only after both sides finished cleanly,
-TLS exporter bound proofs, half close with a rolling timeout, and UDP carried over a tunnel
-with a small jitter mux. TLS, DNS, routing and dialing are left to the caller.
+The wire logic is the same as the standalone nakis: 
 
 ```go
 client, err := nakis.NewClient(nakis.ClientOptions{
@@ -39,9 +36,4 @@ err = service.NewConnection(ctx, conn, source, onClose)
 
 ## Tests
 
-```
-go test -race ./...
-NAKIS_BIN=/path/to/nakis go test -race -run Interop ./...
-```
-
-The interop tests run the official nakis client and server against this library, TCP and UDP.
+We have run the regular tests (TCP, UDP, large data) and passed with goleak and -race testing. The sing-box tests were run on Linux only, and no benchmark data is included here, nor are any claims made about detection (censorship) resistance.
