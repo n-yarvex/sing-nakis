@@ -29,10 +29,11 @@ err = service.NewConnection(ctx, conn, source, onClose)
 
 ## Notes
 
-* `Handshake` receives a connection that must be wrapped by the standard library
-  `crypto/tls`. The proof is bound to the TLS exporter, so uTLS and Reality are not usable.
-* Zero values in the options mean the same defaults as nakis. Negative values turn a
-  numeric knob off where that makes sense.
+* TLS is required on both sides, and only the standard library stack works. The client proof is bound to the TLS exporter, so uTLS and Reality are rejected at initialisation.
+* UDP uses nakis' own tunnel mode; uot is not involved.
+* The server never dials anything itself: targets go through the router, so rules, DNS and private address policy are sing-box's.
+* No client metadata, no fingerprintable defaults in the protocol.
+* Zero values in the options mean the same defaults as nakis. Negative values turn a numeric knob off where that makes sense.
 
 ## Tests
 
